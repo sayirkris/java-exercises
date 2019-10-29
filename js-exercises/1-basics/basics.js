@@ -89,7 +89,7 @@ const someVariable=undefined;
             // write all the zeros.
             // Write it as a string so that the .length property can be checked.
             // ✏️ EDIT NEXT LINE ✏️
-            const bigNumber = "...";
+            const bigNumber = "1e9"
             ////////////////////////////////////////////////////////////////////
 
             expect(typeof bigNumber).to.equal("string");
@@ -106,7 +106,7 @@ const someVariable=undefined;
             // written in way that we don't have to write all the zeros AFTER the point.
             // Write it as a string so that the .length property can be checked.
             // ✏️ EDIT NEXT LINE ✏️
-            const someNumber = "...";
+            const someNumber = "1e1";
             ////////////////////////////////////////////////////////////////////
 
             expect(typeof someNumber).to.equal("string");
@@ -123,7 +123,7 @@ const someVariable=undefined;
             // written in way that we don't have to write all the zeros BEFORE the point.
             // Write it as a string so that the .length property can be checked.
             // ✏️ EDIT NEXT LINE ✏️
-            const someNumber = "...";
+            const someNumber = ".2";
             ////////////////////////////////////////////////////////////////////
 
             expect(typeof someNumber).to.equal("string");
@@ -136,7 +136,9 @@ const someVariable=undefined;
         it("should run without errors", function() {
             ////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE ✏️
-
+            const object = {
+                someProperty:1
+            };
             ////////////////////////////////////////////////////////////////////
 
             expect(object instanceof Object).to.equal(true);
@@ -152,7 +154,7 @@ const someVariable=undefined;
 
             ////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE ✏️
-
+            object.someProperty = undefined;
             ////////////////////////////////////////////////////////////////////
 
             // object.someProperty is undefined...
@@ -171,7 +173,7 @@ const someVariable=undefined;
 
             ////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE ✏️
-
+            delete object.someProperty;
             ////////////////////////////////////////////////////////////////////
 
             // object.someProperty is undefined...
@@ -188,7 +190,7 @@ const someVariable=undefined;
 
             ////////////////////////////////////////////////////////////////////
             // ✏️ ADD CODE HERE ✏️
-
+            const secondArray = firstArray;
             ////////////////////////////////////////////////////////////////////
 
             expect(secondArray).to.eql([1, 2, 3]);
@@ -210,7 +212,7 @@ const someVariable=undefined;
             ////////////////////////////////////////////////////////////////////
             // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
             // ✏️ ADD CODE HERE ✏️
-
+            const secondArray = Array.of(...firstArray)
             ////////////////////////////////////////////////////////////////////
 
             expect(firstArray).to.eql([1, 2, 3]);
@@ -231,7 +233,8 @@ const someVariable=undefined;
             ////////////////////////////////////////////////////////////////////
             // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
             // ✏️ ADD CODE HERE ✏️
-
+            var longArray = new Array(100);
+            console.log(longArray.length);
             ////////////////////////////////////////////////////////////////////
 
             expect(longArray).to.be.instanceOf(Array);
@@ -248,7 +251,8 @@ const someVariable=undefined;
             // By observing their casting behavior in the tests below, you can find
             // out the required types.
             // ✏️ ADD CODE HERE ✏️
-
+            const firstVariable = 1 + 2;
+            const secondVariable = "1";
             ////////////////////////////////////////////////////////////////////
 
             expect(typeof firstVariable).to.equal("number");
@@ -265,7 +269,10 @@ const someVariable=undefined;
             ////////////////////////////////////////////////////////////////////
             // Can you find a string that casts to `false` in an if() statement?
             // ✏️ ADD CODE HERE ✏️
-
+            const falsyString = "";
+            if(falsyString){
+                console.log("falsystring is not falsy")
+            };
             ////////////////////////////////////////////////////////////////////
 
             expect(typeof falsyString).to.equal("string");
@@ -282,7 +289,15 @@ const someVariable=undefined;
             ////////////////////////////////////////////////////////////////////
             // Can you find two different numbers that each cast to `false` in an if() statement?
             // ✏️ ADD CODE HERE ✏️
-
+            var falsyNumber1 = 1;
+            var falsyNumber2 = 2.0;
+            (falsyNumber1 === falsyNumber2);
+            if(falsyNumber1){
+                console.log("falsynumber1 is not falsy")
+            };
+            if(falsyNumber2){
+                console.log("falsynumber2 is not falsy")
+            }
             ////////////////////////////////////////////////////////////////////
 
             expect(typeof falsyNumber1).to.equal("number");
@@ -306,8 +321,11 @@ const someVariable=undefined;
             ////////////////////////////////////////////////////////////////////
             // Can you find a value that is typeof "object" but also casts to `false`?
             // ✏️ ADD CODE HERE ✏️
-
-            ////////////////////////////////////////////////////////////////////
+            var falsyThing = null;
+            if(falsyThing){
+                console.log("falsyThing is not falsy")
+            };
+         ////////////////////////////////////////////////////////////////////
 
             expect(typeof falsyThing).to.equal("object");
             if (falsyThing) {
